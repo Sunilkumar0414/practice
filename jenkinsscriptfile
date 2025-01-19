@@ -1,0 +1,38 @@
+node {
+ // stage:checkout code
+ // clone the code from the repository from the scm
+ stage ('checkout code') {
+    echo 'cloning the repository fro the scm'
+    github "//http:url of the path and location and file"
+ }
+ // stage: set up environment
+ // verifying the maven installation using 'maven -version'
+ stage ('set up environment') {
+    echo 'verifying the maven version'
+    sh 'mvn -version'
+ }
+ // stage: compile code
+ // compiling the code using maven
+ stage ('compile code') {
+    echo 'compiling the code using the maven'
+    sh 'mvn compile'
+ }
+ // stage: test maven
+ // running maven to test 
+ stage ('test mavn') {
+    echo 'running maven '
+    sh 'mvn test'
+ }
+ // stage: install artifacts
+ // after install bulid the artifact
+ stage ('install artifacts') {
+    echo "installing artifacts for test and builds"
+    sh "mvn install"
+ }
+ // stage: clean workspace
+ // cleaning workspace after the installation is complete
+ stage ('clean workspace') {
+    echo "cleanning the workspace"
+    sh "mvn clean "
+ }
+}
