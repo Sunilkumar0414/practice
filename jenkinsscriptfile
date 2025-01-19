@@ -3,7 +3,7 @@ node {
  // clone the code from the repository from the scm
   stage('Checkout Code') {
         echo 'Cloning the repository from SCM...'
-        git 'https://github.com/Sunilkumar0414/practice.git'
+        https://github.com/Sunilkumar0414/practice.git
     }
  // stage: set up environment
  // verifying the maven installation using 'maven -version'
