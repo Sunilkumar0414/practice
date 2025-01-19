@@ -1,10 +1,10 @@
 node {
  // stage:checkout code
  // clone the code from the repository from the scm
- stage ('checkout code') {
-    echo 'cloning the repository fro the scm'
-    github "//http:url of the path and location and file"
- }
+  stage('Checkout Code') {
+        echo 'Cloning the repository from SCM...'
+        checkout scm  // Pulls code from the repository associated with the pipeline
+    }
  // stage: set up environment
  // verifying the maven installation using 'maven -version'
  stage ('set up environment') {
